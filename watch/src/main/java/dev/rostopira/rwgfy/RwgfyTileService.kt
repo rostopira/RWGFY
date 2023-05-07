@@ -73,6 +73,8 @@ class RwgfyTileService: TileService(), CoroutineScope {
                                                 setMaxLines(2)
                                             }
                                         },
+                                        spacer(5.dp),
+                                        refresh(),
                                     )
                                 }
                             )
@@ -117,6 +119,15 @@ class RwgfyTileService: TileService(), CoroutineScope {
         setHeight(ss.dp)
     }
 
+    private fun refresh() = image {
+        setResourceId("refresh")
+        setWidth(24.dp)
+        setHeight(24.dp)
+        setModifiers(modifiers {
+            setClickable(refreshClick("refresh"))
+        })
+    }
+
     override val coroutineContext: CoroutineContext get() = Dispatchers.Main
 
     override fun onResourcesRequest(requestParams: RequestBuilders.ResourcesRequest) = future {
@@ -125,6 +136,7 @@ class RwgfyTileService: TileService(), CoroutineScope {
                 Log.wtf(TAG, "Requested resources: " + requestParams.resourceIds.joinToString())
             }
             addDrawable("genshtab", S.drawable.genshtab_bg)
+            addDrawable("refresh", S.drawable.baseline_refresh_24)
             DrawableFont.values().forEach {
                 addDrawable(it.id, it.resId)
             }
@@ -134,7 +146,7 @@ class RwgfyTileService: TileService(), CoroutineScope {
 
     companion object {
         private const val TAG = "RwgfyTileService"
-        const val RESOURCES_VERSION = "7"
+        const val RESOURCES_VERSION = "8"
         private fun String.asImages(size: Int) =
             toCharArray()
                 .mapNotNull(DrawableFont::byChar)

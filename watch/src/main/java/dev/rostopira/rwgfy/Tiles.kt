@@ -1,8 +1,11 @@
 package dev.rostopira.rwgfy
 
+import androidx.wear.tiles.ActionBuilders.LoadAction
 import androidx.wear.tiles.ColorBuilders.ColorProp
 import androidx.wear.tiles.DimensionBuilders
 import androidx.wear.tiles.LayoutElementBuilders
+import androidx.wear.tiles.ModifiersBuilders.Clickable
+import androidx.wear.tiles.ModifiersBuilders.Modifiers
 import androidx.wear.tiles.TileBuilders
 import androidx.wear.tiles.TimelineBuilders
 
@@ -81,3 +84,9 @@ val Int.sp: DimensionBuilders.SpProp get() = DimensionBuilders.sp(toFloat())
 
 val Float.dp: DimensionBuilders.DpProp get() = DimensionBuilders.dp(this)
 val Int.dp: DimensionBuilders.DpProp get() = DimensionBuilders.dp(toFloat())
+
+fun modifiers(block: Modifiers.Builder.() -> Unit) =
+    Modifiers.Builder().apply(block).build()
+
+fun Modifiers.Builder.refreshClick(id: String) =
+    Clickable.Builder().setId(id).setOnClick(LoadAction.Builder().build()).build()
