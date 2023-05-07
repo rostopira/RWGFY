@@ -39,6 +39,12 @@ fun LayoutElementBuilders.Row.Builder.children(elements: List<LayoutElementBuild
     }
 }
 
+fun LayoutElementBuilders.Row.Builder.children(vararg elements: LayoutElementBuilders.LayoutElement) {
+    for (element in elements) {
+        addContent(element)
+    }
+}
+
 fun LayoutElementBuilders.Column.Builder.children(elements: List<LayoutElementBuilders.LayoutElement>) {
     for (element in elements) {
         addContent(element)
@@ -88,5 +94,6 @@ val Int.dp: DimensionBuilders.DpProp get() = DimensionBuilders.dp(toFloat())
 fun modifiers(block: Modifiers.Builder.() -> Unit) =
     Modifiers.Builder().apply(block).build()
 
+@Suppress("unused") // Receiver is unused but required for context
 fun Modifiers.Builder.refreshClick(id: String) =
     Clickable.Builder().setId(id).setOnClick(LoadAction.Builder().build()).build()

@@ -4,4 +4,32 @@
     <string name="tile_description">Втрати окупантів</string>
     <string name="tile_header">Загальні бойові\nвтрати окупанта</string>
     <string name="date_prefix">Станом на %1$s</string>
+
+    <!-- Stats fields -->
+    <string name="sf_personnel_units">Особовий склад</string>
+    <string name="sf_tanks">Танки</string>
+    <string name="sf_armoured_fighting_vehicles">Бойові броньовані машини</string>
+    <string name="sf_artillery_systems">Артилерійські системи</string>
+    <string name="sf_mlrs">Реактивні системи залпового вогню</string>
+    <string name="sf_aa_warfare_systems">Системи протиповітряної оборони</string>
+    <string name="sf_planes">Літаки</string>
+    <string name="sf_helicopters">Гелікоптери</string>
+    <string name="sf_vehicles_fuel_tanks">Автомобільна техніка та цистерни з ПММ</string>
+    <string name="sf_warships_cutters">Військові кораблі та катери</string>
+    <string name="sf_uav_systems">Безпілотні літальні апарати</string>
+    <string name="sf_special_military_equip">Спец. техніка</string>
+    <string name="sf_atgm_srbm_systems">Оперативно-тактичні ракетні комплекси та тактичні ракетні комплекси</string>
+    <string name="sf_cruise_missiles">Крилаті ракети</string>
+
+    <!-- Stats fields short -->
+    <string name="sfs_personnel_units">200-і</string>
+    <string name="sfs_armoured_fighting_vehicles">ББМ</string>
+    <string name="sfs_artillery_systems">Арта</string>
+    <string name="sfs_mlrs">РСЗВ</string>
+    <string name="sfs_aa_warfare_systems">ППО</string>
+    <string name="sfs_vehicles_fuel_tanks">Авто</string>
+    <string name="sfs_warships_cutters">Кораблі</string>
+    <string name="sfs_uav_systems">БПЛА</string>
+    <string name="sfs_special_military_equip">Спец</string>
+    <string name="sfs_atgm_srbm_systems">ATGM and SRBM</string>
 </resources>

@@ -3,4 +3,31 @@
     <string name="tile_description">Dead occupiers</string>
     <string name="tile_header">The total losses\nof the occupier</string>
     <string name="date_prefix">As for %1$s</string>
+
+    <!-- Stats fields -->
+    <string name="sf_personnel_units">Personnel units</string>
+    <string name="sf_tanks">Tanks</string>
+    <string name="sf_armoured_fighting_vehicles">Armoured fighting vehicles</string>
+    <string name="sf_artillery_systems">Artillery systems</string>
+    <string name="sf_mlrs">Multiple Launch Rocket System</string>
+    <string name="sf_aa_warfare_systems">Anti-aircraft warfare systems</string>
+    <string name="sf_planes">Planes</string>
+    <string name="sf_helicopters">Helicopters</string>
+    <string name="sf_vehicles_fuel_tanks">Vehicles and fuel tanks</string>
+    <string name="sf_warships_cutters">Warships and cutters</string>
+    <string name="sf_uav_systems">Unmanned aerial vehicle systems</string>
+    <string name="sf_special_military_equip">Special military equipment</string>
+    <string name="sf_atgm_srbm_systems">Anti-tank guided missile and short-range ballistic missile systems</string>
+    <string name="sf_cruise_missiles">Cruise missiles</string>
+
+    <string name="sfs_personnel_units">KIA</string>
+    <string name="sfs_armoured_fighting_vehicles">AFV</string>
+    <string name="sfs_artillery_systems">Artillery</string>
+    <string name="sfs_mlrs">MLRS</string>
+    <string name="sfs_aa_warfare_systems">AAW</string>
+    <string name="sfs_vehicles_fuel_tanks">Vehicles</string>
+    <string name="sfs_warships_cutters">Warships</string>
+    <string name="sfs_uav_systems">UAV</string>
+    <string name="sfs_special_military_equip">Special equipment</string>
+    <string name="sfs_atgm_srbm_systems">ATGM and SRBM</string>
 </resources>

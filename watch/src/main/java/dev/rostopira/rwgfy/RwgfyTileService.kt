@@ -74,7 +74,13 @@ class RwgfyTileService: TileService(), CoroutineScope {
                                             }
                                         },
                                         spacer(5.dp),
-                                        refresh(),
+                                        row {
+                                            children(
+                                                refresh(),
+                                                spacer(5.dp),
+                                                showFull(),
+                                            )
+                                        }
                                     )
                                 }
                             )
@@ -128,6 +134,28 @@ class RwgfyTileService: TileService(), CoroutineScope {
         })
     }
 
+    private fun showFull() = image {
+        setResourceId("expand")
+        setWidth(24.dp)
+        setHeight(24.dp)
+        setModifiers(modifiers {
+            setClickable(
+                ModifiersBuilders.Clickable.Builder()
+                    .setId("expand")
+                    .setOnClick(
+                        ActionBuilders.LaunchAction.Builder()
+                        .setAndroidActivity(
+                            ActionBuilders.AndroidActivity.Builder()
+                                .setClassName(FullDataActivity::class.java.name)
+                                .setPackageName(BuildConfig.APPLICATION_ID)
+                            .build()
+                        ).build()
+                    )
+                .build()
+            )
+        })
+    }
+
     override val coroutineContext: CoroutineContext get() = Dispatchers.Main
 
     override fun onResourcesRequest(requestParams: RequestBuilders.ResourcesRequest) = future {
@@ -137,6 +165,7 @@ class RwgfyTileService: TileService(), CoroutineScope {
             }
             addDrawable("genshtab", S.drawable.genshtab_bg)
             addDrawable("refresh", S.drawable.baseline_refresh_24)
+            addDrawable("expand", S.drawable.baseline_expand_more_24)
             DrawableFont.values().forEach {
                 addDrawable(it.id, it.resId)
             }
@@ -146,7 +175,7 @@ class RwgfyTileService: TileService(), CoroutineScope {
 
     companion object {
         private const val TAG = "RwgfyTileService"
-        const val RESOURCES_VERSION = "8"
+        const val RESOURCES_VERSION = "9"
         private fun String.asImages(size: Int) =
             toCharArray()
                 .mapNotNull(DrawableFont::byChar)

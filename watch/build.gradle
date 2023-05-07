@@ -32,18 +32,27 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
     }
 }
 
 dependencies {
     implementation(project(":shared"))
 
-    // Base
-    implementation "androidx.wear.tiles:tiles:1.2.0-alpha04"
-    implementation "androidx.wear.watchface:watchface-complications-data-source-ktx:1.1.1"
+    // Activity
+    implementation("androidx.activity:activity-compose:1.7.1")
+    implementation("androidx.wear.compose:compose-foundation:1.1.2")
 
-    // For fucking ListenableFuture style API
+    // Tiles
+    implementation "androidx.wear.tiles:tiles:1.2.0-alpha04"
     implementation("com.google.guava:guava:31.1-android")
+
+    // Complications
+    implementation "androidx.wear.watchface:watchface-complications-data-source-ktx:1.1.1"
 }

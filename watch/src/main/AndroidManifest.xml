@@ -56,6 +56,16 @@
                 android:value="900" />
         </service>
 
+        <activity
+            android:name=".FullDataActivity"
+            android:exported="true"
+            android:theme="@style/RWGFY">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
