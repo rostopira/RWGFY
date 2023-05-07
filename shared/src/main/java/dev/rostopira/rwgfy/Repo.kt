@@ -69,7 +69,10 @@ object Repo {
         } catch (e: Exception) {
             Log.wtf("RWGFY", e)
         }
-        // Last resort: get latest from cache
+        return latestFromCache()
+    }
+
+    fun latestFromCache(): StatisticsObject? {
         val latest = cacheDir
             .listFiles()
             ?.sortedBy(File::lastModified)

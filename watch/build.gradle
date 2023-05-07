@@ -42,8 +42,8 @@ dependencies {
 
     // Base
     implementation "androidx.wear.tiles:tiles:1.2.0-alpha04"
+    implementation "androidx.wear.watchface:watchface-complications-data-source-ktx:1.1.1"
 
     // For fucking ListenableFuture style API
-    // Fuck you google, for forcing me doing that shit
     implementation("com.google.guava:guava:31.1-android")
 }
