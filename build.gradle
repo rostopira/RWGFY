@@ -1,0 +1,26 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    id "org.openapi.generator" version "6.5.0" apply true
+}
+
+openApiGenerate {
+    generatorName.set("kotlin")
+    remoteInputSpec.set("https://russianwarship.rip/api-documentation/document/v2")
+    outputDir.set("${project.projectDir}/build/api")
+    apiPackage = "rip.russianwarship.api"
+    invokerPackage = "rip.russianwarship.invoker"
+    modelPackage = "rip.russianwarship.model"
+}
+
+ext {
+    // Sdk
+    compileSdk = 33
+    targetSdk = 33
+
+    // Version
+    versionCode = 1
+    versionName = "1.0.0"
+}

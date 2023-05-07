@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">РВКІН</string>
+    <string name="tile_description">Втрати окупантів</string>
+    <string name="tile_header">Загальні бойові\nвтрати окупанта</string>
+    <string name="date_prefix">Станом на %1$s</string>
+</resources>

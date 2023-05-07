@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'dev.rostopira.rwgfy'
+    compileSdk rootProject.ext.compileSdk
+
+    defaultConfig {
+        minSdk 26
+        targetSdk rootProject.ext.targetSdk
+        applicationId "dev.rostopira.rwgfy"
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(project(":shared"))
+
+    // Base
+    implementation "androidx.wear.tiles:tiles:1.2.0-alpha04"
+
+    // For fucking ListenableFuture style API
+    // Fuck you google, for forcing me doing that shit
+    implementation("com.google.guava:guava:31.1-android")
+}

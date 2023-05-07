@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'dev.rostopira.rwgfy.shared'
+    compileSdk rootProject.ext.compileSdk
+
+    defaultConfig {
+        minSdk 26
+        targetSdk rootProject.ext.targetSdk
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+
+    sourceSets {
+        main {
+            kotlin {
+                srcDirs += "${rootProject.projectDir}/build/api/src/main/kotlin"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Base
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    // For generated api
+    implementation "com.squareup.moshi:moshi-kotlin:1.14.0"
+    implementation "com.squareup.moshi:moshi-adapters:1.14.0"
+    api "com.squareup.okhttp3:okhttp:4.10.0"
+}
