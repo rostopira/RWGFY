@@ -34,17 +34,17 @@ fun GenshtabTheme(content: @Composable () -> Unit) {
     val typography = CustomTypography(
         title = TextStyle(
             color = Color(res.getColor(S.color.genshtab_yellow)),
-            fontFamily = FontFamily(Font(R.font.open_24_display_st)),
+            fontFamily = FontFamily(Font(S.font.open_24_display_st)),
             fontSize = 18f.sp,
         ),
         total = TextStyle(
             color = Color(res.getColor(S.color.genshtab_yellow)),
-            fontFamily = FontFamily(Font(R.font.open_24_display_st)),
+            fontFamily = FontFamily(Font(S.font.open_24_display_st)),
             fontSize = 24f.sp,
         ),
         increase = TextStyle(
             color = Color(res.getColor(S.color.genshtab_yellow)),
-            fontFamily = FontFamily(Font(R.font.open_24_display_st)),
+            fontFamily = FontFamily(Font(S.font.open_24_display_st)),
             fontSize = 16f.sp,
         ),
     )
